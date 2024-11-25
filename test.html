@@ -1,0 +1,33 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR.js Video Example</title>
+    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/ar.js/aframe/build/aframe-ar.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Сцена AR.js -->
+    <a-scene embedded arjs>
+      <!-- Загружаем видео -->
+      <a-assets>
+        <video id="marker-video" src="/Users/ilyachuiko/Desktop/dev/video.mp4" autoplay loop="true" webkit-playsinline playsinline></video>
+      </a-assets>
+      
+      <!-- Маркер -->
+      <a-marker preset="hiro">
+        <!-- Видео в качестве текстуры -->
+        <a-video src="#marker-video" width="4" height="2.5" position="0 0 0"></a-video>
+      </a-marker>
+      
+      <!-- Камера -->
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+  </html>
